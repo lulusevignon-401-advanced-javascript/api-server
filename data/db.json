@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "id": "id3",
+      "name": "syrah",
+      "display_name": "syrah",
+      "description": "tannic peppery red"
+    },
+    {
+      "id": "id4",
+      "name": "chardonnay",
+      "display_name": "chardonnay",
+      "description": "opulent and creamy on the palate"
+    }
+  ],
+  "products": [
+    {
+      "id": "id2",
+      "category": "red",
+      "name": "pinot noir",
+      "display_name": "pinot noir",
+      "description": "ligh red with low tannins"
+    },
+    {
+      "id": "id4",
+      "category": "white",
+      "name": "riesling",
+      "display_name": "riesling",
+      "description": "floral with high balanced acidity"
+    }
+  ]
+}
