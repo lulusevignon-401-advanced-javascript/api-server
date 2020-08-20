@@ -1,9 +1,8 @@
 const express = require('express');
 const productsRoutes = express.Router();
 
+const products = require('../lib/models/products/products.collection.js');
 
-// const schema = ['id', 'name', 'title', 'author', 'article'];
-// let db = [];
 
 // products routes
 productsRoutes.post('/products', (req, res) =>{
