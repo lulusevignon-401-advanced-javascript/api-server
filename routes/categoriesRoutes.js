@@ -1,33 +1,46 @@
+'use strict';
+
 const express = require('express');
 const categoriesRoutes = express.Router();
 
 const categories = require('../lib/models/categories/categories.collection.js');
 
-categoriesRoutes.post('/categories', (req, res, next) =>{
-  categories.create(req.body)
+categoriesRoutes.post('/categories', postCategories);
+categoriesRoutes.post('/categories/:id', postCategories);
+categoriesRoutes.get('/categories', getCategories);
+categoriesRoutes.get('/categories/:id', getCategories);
+categoriesRoutes.put('/categories', putCategories);
+categoriesRoutes.put('/categories/:id', putCategories);
+categoriesRoutes.delete('/categories/:id', deleteCategories);
+
+
+function postCategories (req, res, next) {
+  categories.post()
     .then(data => {
       res.status(200).json(data);
-    })
-    .catch(next);
-});
+    });
+}
 
-categoriesRoutes.get('/categories', (req, res) => {
-  let output = {
-    type: req.query.type || 'unknown',
-  };
-  res.status(200).json(output);
-});
+function getCategories(req, res, next){
+  categories.get()
+    .then(data=>{
+      res.status(200).json(data);
+    });
+}
 
-categoriesRoutes.get('/categories/:id', (req, res) =>{
+function putCategories (req, res, next){
+  categories.put()
+    .then(data => {
+      res.status(200).json(data);
+    });
+}
 
-});
+function deleteCategories (req, res, next){
+  categories.put()
+    .then(data => {
+      res.status(200).json(data);
+    });
+}
 
-categoriesRoutes.put('/categories/:id', (req, res) =>{
-
-});
-
-categoriesRoutes.delete('/categories/:id', (req, res) =>{
-
-});
 
 module.exports = categoriesRoutes;
