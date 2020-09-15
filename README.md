@@ -16,6 +16,8 @@
 - As a developer, I want Swagger documentation for this API so that I can make it easier for other developers to use and understand
 
 ## Links and Resources
+
+[Dynamic API Server - Business Requirements](https://codefellows.github.io/code-401-javascript-guide/curriculum/apps-and-libraries/api-server/)
  
 ## Setup
 
