@@ -1,5 +1,7 @@
 # Project: api-server
 
+An Express/Node.js based server designed to be a “model agnostic” REST API server, which can perform CRUD operations on any data model
+
 ## Author: Lulu Sevignon
 
 ## Users stories
@@ -21,4 +23,28 @@
  
 ## Setup
 
-## Tests
+
+
+#### Support all REST/HTTP methods
+- GET: Retrieve record(s) from a data source
+    - All
+    - One (by id)
+    - Some (by filtering)
+- POST: Create a new record in a data source
+- PUT: Update a single full record in a data source
+- PATCH: Update part of a single record in a data source
+- DELETE: Delete a record in a data source
+
+#### Obey a standard routing structure
+
+i.e. http://localhost:3000/api/v1/products/12345
+
+- `/api/v#` where # is the version number of our API
+  - `/model` where ‘model’ is the name of the data model to operate on
+    - `/id` where ‘id’ is the id number of a specific entity in the data model
+
+
+
+- Allow for Query String parameters for filtering
+  - i.e. http://localhost:3000/api/v1/products?category=electronics
+  - This would GET every entry in our products data model where the category is ‘electronics’
