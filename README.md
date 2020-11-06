@@ -39,7 +39,7 @@ An Express/Node.js based server designed to be a “model agnostic” REST API s
 - description: { type: String, required: true },
 
 
-#### Support all REST/HTTP methods
+### Support all REST/HTTP methods
 - GET: Retrieve record(s) from a data source
     - All
     - One (by id)
@@ -49,7 +49,7 @@ An Express/Node.js based server designed to be a “model agnostic” REST API s
 - PATCH: Update part of a single record in a data source
 - DELETE: Delete a record in a data source
 
-#### Standard routing structure
+### Standard routing structure
 
 i.e. http://localhost:3000/api/v1/products/12345
 
