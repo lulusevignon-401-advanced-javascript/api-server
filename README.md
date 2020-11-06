@@ -23,6 +23,20 @@ An Express/Node.js based server designed to be a “model agnostic” REST API s
  
 ## Setup
 
+1. Clone down this repo locally
+2. Use Postman or HTTPie to perform CRUD operations on data models
+
+### Products Schema:
+
+- name: { type: String, required: true },
+- category: { type: String, required: true },
+- description: { type: String, required: true },
+- price: { type: Number, required: true },
+- inStock: { type: Number, required: true },
+
+### categories Schema:
+- name: { type: String, required: true },
+- description: { type: String, required: true },
 
 
 #### Support all REST/HTTP methods
@@ -35,7 +49,7 @@ An Express/Node.js based server designed to be a “model agnostic” REST API s
 - PATCH: Update part of a single record in a data source
 - DELETE: Delete a record in a data source
 
-#### Obey a standard routing structure
+#### Standard routing structure
 
 i.e. http://localhost:3000/api/v1/products/12345
 
@@ -44,7 +58,21 @@ i.e. http://localhost:3000/api/v1/products/12345
     - `/id` where ‘id’ is the id number of a specific entity in the data model
 
 
-
 - Allow for Query String parameters for filtering
   - i.e. http://localhost:3000/api/v1/products?category=electronics
   - This would GET every entry in our products data model where the category is ‘electronics’
+
+
+## Technical Requirements
+
+- Node.js
+- ES6 Classes
+- ExpressJS Web Server, built modularly
+    - Middleware for handling 404 and 500 conditions
+    - Middleware for handling the dynamic loading of the correct data model as specified in the route
+    - Use a single router (v1.js) to handle the ReST methods for CRUD for any model
+      
+- Persistence using a Mongo Database
+- Mongoose Schemas to define and model data
+- Mongoose Model “wrapper” class to serve as the API between the express server and the data models themselves
+- Test Driven Development, using Jest
